@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GALERI AURA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-bg: #F8F5F2; /* Warm Off-White */
+        --color-text: #3D3D3D; /* Charcoal */
+        --color-primary: #2E4034; /* Deep Olive Green */
+        --color-secondary: #D4C5B4; /* Soft Beige */
+        --color-border: #EAEAEA;
+        --color-primary-shadow: rgba(46, 64, 52, 0.2);
+        --font-body: 'Inter', sans-serif;
+        --font-display: 'Lora', serif;
+      }
+
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-body);
+      }
+
+      .font-lora {
+        font-family: var(--font-display);
+      }
+      .text-primary { color: var(--color-primary); }
+      .bg-primary { background-color: var(--color-primary); }
+      .border-primary { border-color: var(--color-primary); }
+      .shadow-primary-soft { box-shadow: 0 10px 25px -5px var(--color-primary-shadow), 0 8px 10px -6px var(--color-primary-shadow); }
+      .ring-primary { --tw-ring-color: var(--color-primary); }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #EAEAEA;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--color-secondary);
+        border-radius: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #B9A894;
+      }
+
+      /* Animations */
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+        opacity: 0; /* Start hidden */
+      }
+
+      @keyframes slide-in {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+      }
+      .animate-slide-in {
+        animation: slide-in 0.3s ease-out forwards;
+      }
+      
+      @keyframes card-load {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      .animate-card-load {
+        opacity: 0; /* Start hidden */
+        animation: card-load 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+      }
+      
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+      .animate-blink {
+        animation: blink 1s step-end infinite;
+      }
+
+      /* Landing Page Animations */
+      @keyframes kenburns-top {
+        0% {
+          transform: scale(1) translateY(0);
+          transform-origin: 50% 16%;
+        }
+        100% {
+          transform: scale(1.1) translateY(-15px);
+          transform-origin: top;
+        }
+      }
+      .animate-kenburns {
+        animation: kenburns-top 15s ease-out both infinite alternate;
+      }
+      
+      @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      .animate-fade-out {
+        animation: fade-out 0.8s ease-in forwards;
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.525.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.9.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[var(--color-bg)]">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
